@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" name="QsoEx" qt:editorversion="4.13.2" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" datamodel="cplusplus:DataModel:DataModel.h" initial="Call">
+    <qt:editorinfo initialGeometry="140.86;99.61;-20;-20;40;40"/>
+    <state id="Call">
+        <qt:editorinfo scenegeometry="140.86;266.63;80.86;216.63;120;100" geometry="140.86;266.63;-60;-50;120;100"/>
+        <transition type="external" event="gotCall" target="RST">
+            <qt:editorinfo localGeometry="105.65;35.22"/>
+        </transition>
+    </state>
+    <state id="RST">
+        <qt:editorinfo scenegeometry="438.69;266.63;378.69;216.63;120;100" geometry="438.69;266.63;-60;-50;120;100"/>
+        <transition type="external" event="gotRst" target="Exchange">
+            <qt:editorinfo localGeometry="94.58;44.28"/>
+        </transition>
+        <transition type="external" event="ResetFreomRst" target="Call">
+            <qt:editorinfo movePoint="1.01;1.01" localGeometry="-186.14;-34.71" endTargetFactors="92.16;38.72"/>
+        </transition>
+    </state>
+    <state id="Exchange">
+        <qt:editorinfo scenegeometry="732.49;266.63;672.49;216.63;120;100" geometry="732.49;266.63;-60;-50;120;100"/>
+        <transition type="external" event="gotExchange" target="Final_1"/>
+        <transition type="external" event="ResetFromExchange" target="RST">
+            <qt:editorinfo startTargetFactors="15.95;15.31" localGeometry="-126.17;-24.68" endTargetFactors="71.45;23.98"/>
+        </transition>
+    </state>
+    <final id="Final_1">
+        <qt:editorinfo scenegeometry="854.23;447.74;834.23;427.74;40;40" geometry="854.23;447.74;-20;-20;40;40"/>
+    </final>
+</scxml>
